@@ -10,8 +10,14 @@ message(STATUS "this is a status message")
 set(x hello)
 
 message(STATUS "x is ${x}")
+add_executable(main) #questo è il nome del file eseguibile
+target_sources(main PRIVATE "main.cpp") #questo è il nome del file sorgente, private significa che non è visibile all'esterno
 
 add_subdirectory("library") #aggiunge la cartella library come sottoprogetto
+install(TARGETS main)
+#set(geo_DIR "../geo-install/lib/cmake/geo")
+#find_package(geo) #cerca il pacchetto geo
+
 
 #[[ if (<conditon1>)
     # do something
