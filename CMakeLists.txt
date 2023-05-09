@@ -13,7 +13,11 @@ message(STATUS "x is ${x}")
 add_executable(main) #questo è il nome del file eseguibile
 target_sources(main PRIVATE "main.cpp") #questo è il nome del file sorgente, private significa che non è visibile all'esterno
 
+add_executable(classexample)
+target_sources(classexample PRIVATE "class_example.cpp")
+
 add_subdirectory("library") #aggiunge la cartella library come sottoprogetto
+add_subdirectory("example")
 install(TARGETS main)
 #set(geo_DIR "../geo-install/lib/cmake/geo")
 #find_package(geo) #cerca il pacchetto geo
